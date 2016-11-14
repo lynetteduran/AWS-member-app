@@ -10,7 +10,7 @@
 
   <div class="row margin-top-20">
     <div class="col-sm-3">
-      <img class="img-responsive img-circle" src="img/sample.jpg" />
+      <%= image_tag user.avatar.url(:medium), class:"img-responsive img-circle" %>
     </div>
     <div class="col-sm-9">
       <h2 class="margin-top-40">  <%= user.name %></h2>
@@ -32,25 +32,25 @@
         <h4 class="modal-title">Add Member</h4>
       </div>
 
-      <%= form_for @user= User.new, url: users_path ,method: "POST", html: { multipart: true } do |form| %>
+      <%= form_for @user= User.new, url: users_path , method: "POST", html: { multipart: true } do |f| %>
       <div class="modal-body">
         <div class="bold">
           Member Name
         </div>
         <div class="margin-top-20">
-          <%= form.text_field :name, placeholder:"Name" %>
+          <%= f.text_field :name, class: "form-control", placeholder:"Name" %>
         </div>
         <div class="bold margin-top-20">
           Upload Photo
         </div>
         <div class="margin-top-20">
           Upload photo code here
-        <%= form.file_field :avatar %>
+        <%= f.file_field :avatar %>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%=form.submit %>
+        <%=f.submit %>
         <% end %>
       </div>
     </div><!-- /.modal-content -->
