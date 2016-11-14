@@ -26,5 +26,5 @@ production:
   database: <%= ENV["RDS_DATABASE_NAME"] %>
   username: <%= ENV["RDS_DATABASE_USERNAME"] %>
   password: <%= ENV["RDS_DATABASE_PASSWORD"] %>
-  host: <%= ENV["RDS_DATABASE_NAME"] %>
+  host: <%= ENV["RDS_DATABASE_HOST"] %>
   port: 5432
